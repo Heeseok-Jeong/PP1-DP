@@ -47,7 +47,7 @@ public class MetricCollector {
 			String sourceCode = Utils.readAFile(file.getPath());
 			
 			// 문법대로 작성된 소스코드 파일을 자바 코드를 구성하는 단위 별로 분석하는 Parser를 실행해서
-			// Abstract Systax Tree 만들기
+			// Abstract Syntax Tree 만들기
 			// Abstract Syntax Tree는 자바 소스코드의 각 구성요소를 Tree 데이터 구조의 형태로 저장한 것임
 			// 예를들자면,
 			// int a = 1;라는 코드가 있다고 하면, int는 type a는 변수, 1은 값으로 분석한 내용이 저장되어 있음
@@ -99,17 +99,17 @@ public class MetricCollector {
 	
 	private int computeNumOfMethodInvocations(JavaASTParser codeAST) {
 		// TASK1 TODO codeAST에서 매소드 호출된 개수를 가져온다.
-		return 0;
+		return codeAST.getMethodInvocations().size();
 	}
 	
 	private int computeNumOfForLoops(JavaASTParser codeAST) {
 		// TASK1 TODO codeAST에서 for loop의 개수를 가져온다.
-		return 0;
+		return codeAST.getForStatements().size();
 	}
 	
 	private int computeNumOfIfStatements(JavaASTParser codeAST) {
 		// TASK1 TODO codeAST에서 if문의 개수를 가져온다.
-		return 0;
+		return codeAST.getIfStatements().size();
 	}
 	
 	public void saveAnArffFile() {
